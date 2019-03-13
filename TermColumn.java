@@ -9,7 +9,7 @@ class TermColumn {
 
   public static int getTermColumns(){ // return number of columns || TO-DO: achieve same result with tput
     //String[] cmd = {"/bin/bash", "-c", "tput cols 2< /dev/tty"};
-    String[] cmd = {"/bin/bash", "-c", "stty size < /dev/tty | cut -d ' ' -f 2"};
+    String[] cmd = {"/bin/bash", "-c", "stty size < /dev/tty | cut -d ' ' -f 2"}; // get the second val which is colum number
     int cols = 0;
     try {
         InputStream stdInStream = Runtime.getRuntime().exec(cmd).getInputStream();
@@ -34,6 +34,6 @@ class TermColumn {
 
     }
     System.out.print("\n");
-    System.out.print("\033[49m");
+    System.out.print("\033[49m"); // sets color to default again
   }
 }
