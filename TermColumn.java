@@ -7,7 +7,7 @@ class TermColumn {
       else paintTermColumns(getTermColumns(),"normal");
   }
 
-  public static int getTermColumns(){ // return number of columns || TO-DO: achieve same result with tput
+  public static int getTermColumns(){ // return number of columns
     String[] cmd = {"/bin/bash", "-c", "tput cols 2< /dev/tty"};
     //String[] cmd = {"/bin/bash", "-c", "stty size < /dev/tty | cut -d ' ' -f 2"};
     int cols = 0;
